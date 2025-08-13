@@ -7,7 +7,7 @@ import org.openqa.selenium.*;
 
 import java.time.Duration;
 
-public class ContactCreationTests {
+public class ContactCreationTests extends TestBase {
   WebDriver wd;
 
 
@@ -80,12 +80,7 @@ public class ContactCreationTests {
     }
 
   public static boolean isAlertPresent(WebDriver wd) {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
+    return TestBase.isAlertPresent(wd);
   }
 
 }
