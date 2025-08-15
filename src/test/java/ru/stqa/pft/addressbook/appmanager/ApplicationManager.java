@@ -1,8 +1,8 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
 import java.time.Duration;
 
 public class ApplicationManager {
@@ -14,14 +14,6 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   public boolean acceptNextAlert;
 
-  public static boolean isAlertPresent(WebDriver wd) {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
 
   public void init() {
     wd = new EdgeDriver();
