@@ -1,16 +1,17 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import ru.stqa.pft.addressbook.model.ContactData;
-
 import java.time.Duration;
 
 public class ApplicationManager {
   WebDriver wd;
+
+  private NavigationHelper navigationHelper;
+  private ContactHelper contactHelper;
   private GroupHelper groupHelper;
+  private SessionHelper sessionHelper;
   public boolean acceptNextAlert;
 
   public static boolean isAlertPresent(WebDriver wd) {
@@ -27,79 +28,30 @@ public class ApplicationManager {
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     wd.get("http://localhost/addressbook/group.php");
     groupHelper = new GroupHelper(wd);
-    login("admin", "secret");
+    contactHelper = new ContactHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
+    sessionHelper = new SessionHelper(wd);
+    sessionHelper.login("admin", "secret");
   }
 
-  public void login(String username, String password) {
-    wd.findElement(By.name("user")).click();
-    wd.findElement(By.name("user")).clear();
-    wd.findElement(By.name("user")).sendKeys(username);
-    wd.findElement(By.name("pass")).click();
-    wd.findElement(By.name("pass")).clear();
-    wd.findElement(By.name("pass")).sendKeys(password);
-    wd.findElement(By.xpath("//input[@value='Login']")).click();
-  }
-
-  public void gotoGroupPage() {
-    wd.findElement(By.linkText("groups")).click();
-  }
 
   public void stop() {
     wd.quit();
   }
 
-  public void returnToHomePage() {
-    wd.findElement(By.linkText("home page")).click();
-    wd.get("http://localhost/addressbook/index.php");
-  }
-
-  public void submitContactCreation() {
-    wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
-  }
-
-  public void fillContactForm(ContactData contactData) {
-    wd.findElement(By.name("firstname")).click();
-    wd.findElement(By.name("firstname")).clear();
-    wd.findElement(By.name("firstname")).sendKeys(contactData.firstName());
-    wd.findElement(By.name("lastname")).click();
-    wd.findElement(By.name("lastname")).clear();
-    wd.findElement(By.name("lastname")).sendKeys(contactData.lastName());
-    wd.findElement(By.name("company")).click();
-    wd.findElement(By.name("company")).clear();
-    wd.findElement(By.name("company")).sendKeys(contactData.company());
-    wd.findElement(By.name("address")).click();
-    wd.findElement(By.name("address")).clear();
-    wd.findElement(By.name("address")).sendKeys(contactData.address());
-    wd.findElement(By.name("mobile")).click();
-    wd.findElement(By.name("mobile")).clear();
-    wd.findElement(By.name("mobile")).sendKeys(contactData.phoneNumber());
-    wd.findElement(By.name("email")).click();
-    wd.findElement(By.name("email")).clear();
-    wd.findElement(By.name("email")).sendKeys(contactData.eMail());
-  }
-
-  public void initContactCreation() {
-    wd.findElement(By.linkText("add new")).click();
-    wd.get("http://localhost/addressbook/edit.php");
-  }
-
-  public void deleteSelectedContact() {
-    wd.findElement(By.xpath("//input[@value='Delete']")).click();
-  }
-
-  public void selectContact() {
-    wd.findElement(By.name("selected[]")).click();
-  }
-
-  public void gotoMainPage() {
-    wd.findElement(By.linkText("home")).click();
-  }
-
-  public void submitDeletionContact() {
-    wd.switchTo().alert().accept();
-  }
-
   public GroupHelper getGroupHelper() {
     return groupHelper;
+  }
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
+  }
+
+  public SessionHelper getSessionHelper() {
+    return sessionHelper;
   }
 }
