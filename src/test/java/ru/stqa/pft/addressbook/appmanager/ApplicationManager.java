@@ -31,7 +31,7 @@ public class ApplicationManager {
     } else if (browser.equals(Browser.FIREFOX)) {
       wd = new FirefoxDriver();
     }
-    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wd.get("http://localhost/addressbook/group.php");
     groupHelper = new GroupHelper(wd);
     contactHelper = new ContactHelper(wd);
