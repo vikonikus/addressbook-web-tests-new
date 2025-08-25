@@ -4,17 +4,19 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.util.List;
+
 public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() throws Exception {
     app.getNavigationHelper().gotoHomePage();
-    int before = app.getContactHelper().getContactCounter();
-    app.getContactHelper().createContact(new ContactData("firstName4", "LastName4",
-            "Company4", "Address4", "phoneNumber4", "eMail4", "test1"));
+    List<ContactData> before = app.getContactHelper().getContactList();
+    app.getContactHelper().createContact(new ContactData("firstName1", "LastName1",
+            "Company1", "Address1", "phoneNumber1", "eMail1", "test1"));
     app.getNavigationHelper().gotoHomePage();
-    int after = app.getContactHelper().getContactCounter();
-    Assert.assertEquals(after, before + 1);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size() + 1);
   }
 
 }
