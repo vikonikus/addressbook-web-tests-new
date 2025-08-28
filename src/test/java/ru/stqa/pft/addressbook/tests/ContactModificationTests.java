@@ -8,7 +8,7 @@ public class ContactModificationTests extends TestBase {
 
   @Test (enabled = false)
   public void testContactModification() {
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     if (! app.getContactHelper().isThereAContact()) {
       app.getContactHelper().createContact(new ContactData("firstName", "LastName",
               "Company", "Address", "phoneNumber", "eMail", "test1"));
@@ -20,7 +20,7 @@ public class ContactModificationTests extends TestBase {
             "Company_mod3", "Address_mod3", "phoneNumber_mod3", "eMail_mod3",
             null), false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().gotoHomePage();
+    app.goTo().gotoHomePage();
     int after = app.getContactHelper().getContactCounter();
     Assert.assertEquals(after, before + 1); // есть чекбокс для всех контактов, поэтому умвеличиваем после на 1
   }
