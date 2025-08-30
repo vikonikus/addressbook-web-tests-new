@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Browser;
-
 import java.time.Duration;
 
 public class ApplicationManager {
@@ -47,6 +46,10 @@ public class ApplicationManager {
 
   public GroupHelper group() {
     return groupHelper;
+  }
+
+  public ContactHelper contact() {
+    return contactHelper;
   }
 
   public ContactHelper getContactHelper() {

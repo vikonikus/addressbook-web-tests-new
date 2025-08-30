@@ -1,27 +1,45 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactModificationTests extends TestBase {
 
-  @Test (enabled = false)
-  public void testContactModification() {
+  @BeforeMethod
+  public void ensurePreconditions() {
     app.goTo().gotoHomePage();
-    if (! app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().createContact(new ContactData("firstName", "LastName",
-              "Company", "Address", "phoneNumber", "eMail", "test1"));
+    if (app.contact().all().isEmpty()) {
+      app.contact().create(new ContactData()
+              .withFirstname("firstName")
+              .withLastname("LastName")
+              .withHomePhone("home")
+              .withMobilePhone("mobile")
+              .withWorkPhone("work"));
     }
-    int before = app.getContactHelper().getContactCounter();
-    app.getContactHelper().selectContact(before - 1);
-    app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("firstName_mod3", "LastName_mod3",
-            "Company_mod3", "Address_mod3", "phoneNumber_mod3", "eMail_mod3",
-            null), false);
-    app.getContactHelper().submitContactModification();
-    app.goTo().gotoHomePage();
-    int after = app.getContactHelper().getContactCounter();
-    Assert.assertEquals(after, before + 1); // есть чекбокс для всех контактов, поэтому умвеличиваем после на 1
+  }
+
+  @Test
+  public void testContactModification() {
+    Contacts before = app.contact().all();
+    ContactData modifiedContact = before.iterator().next();
+    ContactData contact = new ContactData()
+            .withId(modifiedContact.getId())
+            .withFirstname("firstName")
+            .withLastname("LastName")
+            .withHomePhone("home")
+            .withMobilePhone("mobile")
+            .withWorkPhone("work");
+    app.contact().modify(contact);
+    assertThat(app.contact().count(), equalTo(before.size()));
+    Contacts after = app.contact().all();
+    assertThat(after, equalTo(before.without(modifiedContact).withAdded(contact)));
   }
 }
