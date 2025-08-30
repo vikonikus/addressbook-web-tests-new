@@ -9,14 +9,25 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class GroupCreationTests extends TestBase {
 
   @Test
-  public void testCreationGroup() throws Exception {
+  public void testGroupCreation() throws Exception {
     app.goTo().groupPage();
     Groups before = app.group().all();
     GroupData group = new GroupData().withName("test2");
     app.group().create(group);
     Groups after = app.group().all();
-    assertThat(after.size(), equalTo(before.size() + 1));
+    assertThat(app.group().count(), equalTo(before.size() + 1));
     assertThat(after, equalTo(
             before.withAdded(group.withId(after.stream().mapToInt(GroupData::getId).max().getAsInt()))));
+  }
+
+  @Test
+  public void testBabGroupCreation() throws Exception {
+    app.goTo().groupPage();
+    Groups before = app.group().all();
+    GroupData group = new GroupData().withName("test2'"); //нельзя создать группу со знаком аппостроф
+    app.group().create(group);
+    assertThat(app.group().count(), equalTo(before.size()));
+    Groups after = app.group().all();
+    assertThat(after, equalTo(before));
   }
 }
