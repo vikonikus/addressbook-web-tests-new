@@ -12,7 +12,7 @@ public class ContactData {
   private String mobilePhone;
   private String workPhone;
 //  private String email;
-//  private String group;
+  private String group;
 
   public ContactData withId(int id) {
     this.id = id;
@@ -80,9 +80,9 @@ public class ContactData {
 //    return email;
 //  }
 
-//  public String getGroup() {
-//    return group;
-//  }
+  public String getGroup() {
+    return group;
+  }
 
   @Override
   public boolean equals(Object o) {
