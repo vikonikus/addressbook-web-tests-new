@@ -7,26 +7,26 @@ import java.util.stream.Collectors;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class ContactPhoneTests extends TestBase {
+public class ContactEmailTests extends TestBase {
 
   @Test
-  public void testContactPhones() {
+  public void testContactEmails() {
     app.goTo().gotoHomePage();
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
-    assertThat(contact.getAllPhones(), equalTo(mergePhone(contactInfoFromEditForm)));
+    assertThat(contact.getAllEmails(), equalTo(mergeEmail(contactInfoFromEditForm)));
   }
 
-  private String mergePhone(ContactData contact) {
-    return Arrays.asList(contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone())
+  private String mergeEmail(ContactData contact) {
+    return Arrays.asList(contact.getFirstEmail(), contact.getSecondEmail(), contact.getThirdEmail())
             .stream()
             .filter((s) -> ! s.equals(""))
-            .map(ContactPhoneTests::cleaned)
+            .map(ContactEmailTests::cleaned)
             .collect(Collectors.joining("\n"));
   }
 
-  public static String cleaned(String phone) {
-    return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
+  public static String cleaned(String email) {
+    return email.replaceAll("[-()]", "");
   }
 }
