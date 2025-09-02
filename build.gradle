@@ -10,6 +10,7 @@ dependencies {
     testImplementation 'org.testng:testng:7.11.0'
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.35.0'
     testImplementation 'org.hamcrest:hamcrest:3.0'
+    testImplementation 'com.beust:jcommander:1.82'
 }
 
 test {
