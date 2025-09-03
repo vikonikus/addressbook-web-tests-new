@@ -26,11 +26,11 @@ public class ContactHelper extends HelperBase {
     type(By.name("lastname"), contactData.getLastname());
     attach(By.name("photo"), contactData.getPhoto());
 //    type(By.name("company"), contactData.getCompany());
-//    type(By.name("address"), contactData.getAddress());
-//    type(By.name("home"), contactData.getHomePhone());
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("home"), contactData.getHomePhone());
 //    type(By.name("mobile"), contactData.getMobilePhone());
 //    type(By.name("work"), contactData.getWorkPhone());
-//    type(By.name("email"), contactData.getFirstEmail());
+    type(By.name("email"), contactData.getFirstEmail());
 //    type(By.name("email2"), contactData.getSecondEmail());
 //    type(By.name("email3"), contactData.getThirdEmail());
 
@@ -103,16 +103,16 @@ public class ContactHelper extends HelperBase {
       int id = Integer.parseInt(cells.get(0).findElement(By.tagName("input")).getAttribute("value"));
       String lastname = cells.get(1).getText();
       String firstname = cells.get(2).getText();
-//      String allPhones = cells.get(5).getText();
-//      String address = cells.get(3).getText();
-//      String allEmails = cells.get(4).getText();
+      String allPhones = cells.get(5).getText();
+      String address = cells.get(3).getText();
+      String allEmails = cells.get(4).getText();
       contacts.add(new ContactData()
               .withId(id)
               .withFirstname(firstname)
-              .withLastname(lastname));
-//              .withAllPhones(allPhones)
-//              .withAddress(address)
-//              .withAllEmails(allEmails));
+              .withLastname(lastname)
+              .withAllPhones(allPhones)
+              .withAddress(address)
+              .withAllEmails(allEmails));
     }
     return contacts;
   }
