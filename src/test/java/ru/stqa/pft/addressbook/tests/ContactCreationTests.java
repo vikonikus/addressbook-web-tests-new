@@ -3,6 +3,12 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,11 +18,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTests extends TestBase {
 
   @DataProvider
-  public Iterator<Object[]> validContacts() {
+  public Iterator<Object[]> validContacts() throws IOException {
     List<Object[]> list = new ArrayList<>();
-    list.add(new Object[]{"Firstname1", "Lastname1", "Address 1", "1@1.ru", "111"});
-    list.add(new Object[]{"Firstname2", "Lastname2", "Address 2", "2@2.ru", "222"});
-    list.add(new Object[]{"Firstname3", "Lastname3", "Address 3", "3@3.ru", "333"});
+    BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.csv"));
+    String line = reader.readLine();
+    while (line != null) {
+      String[] split = line.split(";");
+      list.add(new Object[]{new ContactData().withLastname(split[0]).withFirstname(split[1]).withAddress(split[2])
+              .withFirstEmail(split[3]).withHomePhone(split[4])});
+      line = reader.readLine();
+    }
     return list.iterator();
   }
 
