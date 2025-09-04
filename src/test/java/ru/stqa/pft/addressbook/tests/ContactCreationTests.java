@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
-  @DataProvider
+  @DataProvider(name = "validContacts")
   public Iterator<Object[]> validContacts() throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/contacts.xml"));
     String xml = "";
@@ -36,15 +36,7 @@ public class ContactCreationTests extends TestBase {
   }
 
   @Test(dataProvider = "validContacts")
-  public void testContactCreation(String firstname, String lastname, String address, String email, String homephone) throws Exception {
-    //    File photo = new File("src/test/resources/floor.png");
-    ContactData contact = new ContactData()
-            .withFirstname(firstname)
-            .withLastname(lastname)
-            .withAddress(address)
-            .withFirstEmail(email)
-            .withHomePhone(homephone);
-//            .withPhoto(photo);
+  public void testContactCreation(ContactData contact) throws Exception {
     app.goTo().gotoHomePage();
     Contacts before = app.contact().all();
     app.contact().create(contact);
@@ -53,6 +45,5 @@ public class ContactCreationTests extends TestBase {
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt(ContactData::getId).max().getAsInt()))));
   }
-
 
 }
