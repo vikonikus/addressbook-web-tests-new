@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.model;
 
+import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
@@ -10,29 +11,38 @@ import java.util.Objects;
 public class ContactData {
   @XStreamOmitField
   private int id;
+  @Expose
   private String lastname;
+  @Expose
   private String firstname;
-//  private String company;
+  //  private String company;
+  @Expose
   private String address;
+  @Expose
   private String homePhone;
+  @Expose
   private String mobilePhone;
+  @Expose
   private String workPhone;
+  @Expose
   private String firstEmail;
   private String secondEmail;
   private String thirdEmail;
   private String group;
+  @Expose
   private String allPhones;
+  @Expose
   private String allEmails;
-  private File photo;
-
-  public File getPhoto() {
-    return photo;
-  }
-
-  public ContactData withPhoto(File photo) {
-    this.photo = photo;
-    return this;
-  }
+//  private File photo; // не работает для перевода в json поэтому коменчены все поля с photo
+//
+//  public File getPhoto() {
+//    return photo;
+//  }
+//
+//  public ContactData withPhoto(File photo) {
+//    this.photo = photo;
+//    return this;
+//  }
 
   public String getAllPhones() {
     return allPhones;
@@ -126,7 +136,7 @@ public class ContactData {
     return firstname;
   }
 
-//  public String getCompany() {
+  //  public String getCompany() {
 //    return company;
 //  }
 //

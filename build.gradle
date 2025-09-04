@@ -12,6 +12,7 @@ dependencies {
     testImplementation 'org.hamcrest:hamcrest:3.0'
     testImplementation 'com.beust:jcommander:1.82'
     testImplementation 'com.thoughtworks.xstream:xstream:1.4.21'
+    testImplementation 'com.google.code.gson:gson:2.13.1'
 }
 
 test {
