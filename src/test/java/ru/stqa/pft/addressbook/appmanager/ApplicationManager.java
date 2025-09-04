@@ -15,21 +15,23 @@ public class ApplicationManager {
   private GroupHelper groupHelper;
   private SessionHelper sessionHelper;
   public boolean acceptNextAlert;
-  private Browser browser;
+  private String browser;
 
-  public ApplicationManager(Browser browser) {
+  public ApplicationManager(String browser) {
     this.browser = browser;
   }
 
-
   public void init() {
-    if (browser.equals(Browser.EDGE)) {
+    if (browser.equals("edge")) {
       wd = new EdgeDriver();
-    } else if (browser.equals(Browser.CHROME)) {
+    } else if (browser.equals("chrome")) {
       wd = new ChromeDriver();
-    } else if (browser.equals(Browser.FIREFOX)) {
+    } else if (browser.equals("firefox")) {
       wd = new FirefoxDriver();
+    } else {
+      throw new IllegalArgumentException("Unsupported browser: " + browser);
     }
+
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wd.get("http://localhost/addressbook");
     groupHelper = new GroupHelper(wd);
