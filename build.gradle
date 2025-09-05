@@ -24,6 +24,10 @@ task testGroups(type: Test) {
     if (project.hasProperty('brouser')) {
         systemProperty 'browser', "${browser}"
     }
+
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
+    }
 }
 
 task testContacts(type: Test) {
@@ -34,6 +38,10 @@ task testContacts(type: Test) {
     // Если не указывать то запускается с дефолтным свойством из TestBase
     if (project.hasProperty('brouser')) {
         systemProperty 'browser', "${browser}"
+    }
+
+    if (project.hasProperty('target')) {
+        systemProperty 'target', "${target}"
     }
 
 }
