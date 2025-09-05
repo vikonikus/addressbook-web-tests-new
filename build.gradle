@@ -13,6 +13,7 @@ dependencies {
     testImplementation 'com.beust:jcommander:1.82'
     testImplementation 'com.thoughtworks.xstream:xstream:1.4.21'
     testImplementation 'com.google.code.gson:gson:2.13.1'
+    testImplementation 'ch.qos.logback:logback-classic:1.5.18'
 }
 
 task testGroups(type: Test) {
@@ -24,7 +25,8 @@ task testGroups(type: Test) {
     if (project.hasProperty('brouser')) {
         systemProperty 'browser', "${browser}"
     }
-
+    //запускается из командной строки со свойством gradlew -Ptarget=local testContacts
+    // Если не указывать то запускается с дефолтным свойством из TestBase
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
     }
