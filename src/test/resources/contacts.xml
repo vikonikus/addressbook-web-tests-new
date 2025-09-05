@@ -1,0 +1,37 @@
+<list>
+  <contact>
+    <lastname>Lastname0</lastname>
+    <firstname>Firstname0</firstname>
+    <address>address0</address>
+    <homePhone>HomePhone0</homePhone>
+    <firstEmail>0@0.ru</firstEmail>
+  </contact>
+  <contact>
+    <lastname>Lastname1</lastname>
+    <firstname>Firstname1</firstname>
+    <address>address1</address>
+    <homePhone>HomePhone1</homePhone>
+    <firstEmail>1@1.ru</firstEmail>
+  </contact>
+  <contact>
+    <lastname>Lastname2</lastname>
+    <firstname>Firstname2</firstname>
+    <address>address2</address>
+    <homePhone>HomePhone2</homePhone>
+    <firstEmail>2@2.ru</firstEmail>
+  </contact>
+  <contact>
+    <lastname>Lastname3</lastname>
+    <firstname>Firstname3</firstname>
+    <address>address3</address>
+    <homePhone>HomePhone3</homePhone>
+    <firstEmail>3@3.ru</firstEmail>
+  </contact>
+  <contact>
+    <lastname>Lastname4</lastname>
+    <firstname>Firstname4</firstname>
+    <address>address4</address>
+    <homePhone>HomePhone4</homePhone>
+    <firstEmail>4@4.ru</firstEmail>
+  </contact>
+</list>
