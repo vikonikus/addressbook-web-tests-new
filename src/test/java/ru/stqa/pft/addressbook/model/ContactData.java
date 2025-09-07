@@ -3,46 +3,109 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.io.File;
+import java.util.Date;
 import java.util.Objects;
 
 @XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
   @XStreamOmitField
+  @Id
+  @Column(name = "id")
   private int id;
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", lastname='" + lastname + '\'' +
+            ", firstname='" + firstname + '\'' +
+            ", address='" + address + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", mobilePhone='" + mobilePhone + '\'' +
+            ", workPhone='" + workPhone + '\'' +
+            ", firstEmail='" + firstEmail + '\'' +
+            ", secondEmail='" + secondEmail + '\'' +
+            ", thirdEmail='" + thirdEmail + '\'' +
+            ", group='" + group + '\'' +
+            ", allPhones='" + allPhones + '\'' +
+            ", allEmails='" + allEmails + '\'' +
+            ", photo='" + photo + '\'' +
+            '}';
+  }
+
   @Expose
+  @Column(name = "lastname")
   private String lastname;
+
   @Expose
+  @Column(name = "deprecated")
+  private Date deprecated;
+
+  public Date getDeprecated() {
+    return deprecated;
+  }
+
+  @Expose
+  @Column(name = "firstname")
   private String firstname;
   //  private String company;
+
   @Expose
+  @Transient
   private String address;
+
   @Expose
+  @Column(name = "home")
   private String homePhone;
+
   @Expose
+  @Column(name = "mobile")
   private String mobilePhone;
+
   @Expose
+  @Column(name = "work")
   private String workPhone;
+
   @Expose
+  @Transient
   private String firstEmail;
+
+  @Transient
   private String secondEmail;
+
+  @Transient
   private String thirdEmail;
+
+  @Transient
   private String group;
+
   @Expose
+  @Transient
   private String allPhones;
+
   @Expose
+  @Transient
   private String allEmails;
-//  private File photo; // не работает для перевода в json поэтому коменчены все поля с photo
-//
-//  public File getPhoto() {
-//    return photo;
-//  }
-//
-//  public ContactData withPhoto(File photo) {
-//    this.photo = photo;
-//    return this;
-//  }
+
+  @Column(name = "photo")
+  private String photo; // не работает для перевода в json поэтому коменчены все поля с photo
+
+  public File getPhoto() {
+    return new File(photo);
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo.getPath();
+    return this;
+  }
 
   public String getAllPhones() {
     return allPhones;
@@ -178,22 +241,4 @@ public class ContactData {
             firstEmail, secondEmail, thirdEmail, group, allPhones, allEmails);
   }
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", lastname='" + lastname + '\'' +
-            ", firstname='" + firstname + '\'' +
-            ", address='" + address + '\'' +
-            ", homePhone='" + homePhone + '\'' +
-            ", mobilePhone='" + mobilePhone + '\'' +
-            ", workPhone='" + workPhone + '\'' +
-            ", firstEmail='" + firstEmail + '\'' +
-            ", secondEmail='" + secondEmail + '\'' +
-            ", thirdEmail='" + thirdEmail + '\'' +
-            ", group='" + group + '\'' +
-            ", allPhones='" + allPhones + '\'' +
-            ", allEmails='" + allEmails + '\'' +
-            '}';
-  }
 }
