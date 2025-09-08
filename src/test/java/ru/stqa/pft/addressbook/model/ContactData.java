@@ -22,6 +22,13 @@ public class ContactData {
   private int id;
 
   @Override
+  public boolean equals(Object o) {
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(lastname, that.lastname) && Objects.equals(firstname, that.firstname) && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone) && Objects.equals(firstEmail, that.firstEmail);
+  }
+
+  @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
@@ -29,16 +36,13 @@ public class ContactData {
             ", firstname='" + firstname + '\'' +
             ", address='" + address + '\'' +
             ", homePhone='" + homePhone + '\'' +
-            ", mobilePhone='" + mobilePhone + '\'' +
-            ", workPhone='" + workPhone + '\'' +
             ", firstEmail='" + firstEmail + '\'' +
-            ", secondEmail='" + secondEmail + '\'' +
-            ", thirdEmail='" + thirdEmail + '\'' +
-            ", group='" + group + '\'' +
-            ", allPhones='" + allPhones + '\'' +
-            ", allEmails='" + allEmails + '\'' +
-            ", photo='" + photo + '\'' +
             '}';
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, lastname, firstname, address, homePhone, firstEmail);
   }
 
   @Expose
@@ -59,7 +63,7 @@ public class ContactData {
   //  private String company;
 
   @Expose
-  @Transient
+  @Column(name = "address")
   private String address;
 
   @Expose
@@ -75,13 +79,15 @@ public class ContactData {
   private String workPhone;
 
   @Expose
-  @Transient
+  @Column(name = "email")
   private String firstEmail;
 
-  @Transient
+  @Expose
+  @Column(name = "email2")
   private String secondEmail;
 
-  @Transient
+  @Expose
+  @Column(name = "email3")
   private String thirdEmail;
 
   @Transient
@@ -95,7 +101,9 @@ public class ContactData {
   @Transient
   private String allEmails;
 
-  @Column(name = "photo")
+  @Expose
+  @Transient
+//  @Column(name = "photo")
   private String photo; // не работает для перевода в json поэтому коменчены все поля с photo
 
   public File getPhoto() {
@@ -221,24 +229,6 @@ public class ContactData {
 
   public String getGroup() {
     return group;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(lastname, that.lastname) && Objects.equals(firstname, that.firstname)
-            && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone)
-            && Objects.equals(mobilePhone, that.mobilePhone) && Objects.equals(workPhone, that.workPhone)
-            && Objects.equals(firstEmail, that.firstEmail) && Objects.equals(secondEmail, that.secondEmail)
-            && Objects.equals(thirdEmail, that.thirdEmail) && Objects.equals(group, that.group)
-            && Objects.equals(allPhones, that.allPhones) && Objects.equals(allEmails, that.allEmails);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, lastname, firstname, address, homePhone, mobilePhone, workPhone,
-            firstEmail, secondEmail, thirdEmail, group, allPhones, allEmails);
   }
 
 }

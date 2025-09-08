@@ -28,11 +28,11 @@ public class ContactHelper extends HelperBase {
 //    type(By.name("company"), contactData.getCompany());
     type(By.name("address"), contactData.getAddress());
     type(By.name("home"), contactData.getHomePhone());
-//    type(By.name("mobile"), contactData.getMobilePhone());
-//    type(By.name("work"), contactData.getWorkPhone());
+    type(By.name("mobile"), contactData.getMobilePhone());
+    type(By.name("work"), contactData.getWorkPhone());
     type(By.name("email"), contactData.getFirstEmail());
-//    type(By.name("email2"), contactData.getSecondEmail());
-//    type(By.name("email3"), contactData.getThirdEmail());
+    type(By.name("email2"), contactData.getSecondEmail());
+    type(By.name("email3"), contactData.getThirdEmail());
 
 //    if (creation) {
 //      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());

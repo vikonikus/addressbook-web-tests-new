@@ -39,7 +39,6 @@ public class GroupCreationTests extends TestBase {
     }
   }
 
-
   @DataProvider
   public Iterator<Object[]> validGroupsFromJson() throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/groups.json"))) {
@@ -56,13 +55,12 @@ public class GroupCreationTests extends TestBase {
     }
   }
 
-
   @Test(dataProvider = "validGroupsFromJson")
   public void testGroupCreation(GroupData group) throws Exception {
     app.goTo().groupPage();
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     app.group().create(group);
-    Groups after = app.group().all();
+    Groups after = app.db().groups();
     assertThat(app.group().count(), equalTo(before.size() + 1));
     assertThat(after, equalTo(
             before.withAdded(group.withId(after.stream().mapToInt(GroupData::getId).max().getAsInt()))));
@@ -71,11 +69,11 @@ public class GroupCreationTests extends TestBase {
   @Test(enabled = false)
   public void testBabGroupCreation() throws Exception {
     app.goTo().groupPage();
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     GroupData group = new GroupData().withName("test2'"); //нельзя создать группу со знаком аппостроф
     app.group().create(group);
     assertThat(app.group().count(), equalTo(before.size()));
-    Groups after = app.group().all();
+    Groups after = app.db().groups();
     assertThat(after, equalTo(before));
   }
 }
