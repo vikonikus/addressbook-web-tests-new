@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,6 +49,9 @@ public class ContactHelper extends HelperBase {
 
   public void deleteSelectedContact() {
     click(By.xpath("//input[@value='Delete']"));
+    // Обработать confirm dialog
+    Alert alert = wd.switchTo().alert();
+    alert.accept(); // Принять удаление
   }
 
   public void selectContact(int index) {
