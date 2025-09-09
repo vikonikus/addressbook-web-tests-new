@@ -27,30 +27,6 @@ public class ContactData {
   @Column(name = "id")
   private int id;
 
-  @Override
-  public boolean equals(Object o) {
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id && Objects.equals(lastname, that.lastname) && Objects.equals(firstname, that.firstname) && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone) && Objects.equals(firstEmail, that.firstEmail);
-  }
-
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "id=" + id +
-            ", lastname='" + lastname + '\'' +
-            ", firstname='" + firstname + '\'' +
-            ", address='" + address + '\'' +
-            ", homePhone='" + homePhone + '\'' +
-            ", firstEmail='" + firstEmail + '\'' +
-            '}';
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, lastname, firstname, address, homePhone, firstEmail);
-  }
-
   @Expose
   @Column(name = "lastname")
   private String lastname;
@@ -109,7 +85,7 @@ public class ContactData {
 
   @Expose
   @Transient
-//  @Column(name = "photo")
+  @Column(name = "photo")
   private String photo; // не работает для перевода в json поэтому коменчены все поля с photo
 
   @ManyToMany(fetch = FetchType.EAGER)
@@ -118,38 +94,14 @@ public class ContactData {
           inverseJoinColumns = @JoinColumn(name = "group_id"))
   private Set<GroupData> groups = new HashSet<GroupData>();
 
-  public File getPhoto() {
-    return new File(photo);
-  }
-
   public ContactData withPhoto(File photo) {
     this.photo = photo.getPath();
     return this;
   }
 
-  public String getAllPhones() {
-    return allPhones;
-  }
-
   public ContactData withAllPhones(String allPhones) {
     this.allPhones = allPhones;
     return this;
-  }
-
-  public String getAllEmails() {
-    return allEmails;
-  }
-
-  public String getFirstEmail() {
-    return firstEmail;
-  }
-
-  public String getSecondEmail() {
-    return secondEmail;
-  }
-
-  public String getThirdEmail() {
-    return thirdEmail;
   }
 
   public ContactData withAllEmails(String allEmails) {
@@ -207,6 +159,7 @@ public class ContactData {
     return this;
   }
 
+
   public int getId() {
     return id;
   }
@@ -227,6 +180,10 @@ public class ContactData {
     return address;
   }
 
+  public String getAllPhones() {
+    return allPhones;
+  }
+
   public String getHomePhone() {
     return homePhone;
   }
@@ -241,6 +198,50 @@ public class ContactData {
 
   public Groups getGroups() {
     return new Groups(groups);
+  }
+
+  public String getAllEmails() {
+    return allEmails;
+  }
+
+  public String getFirstEmail() {
+    return firstEmail;
+  }
+
+  public String getSecondEmail() {
+    return secondEmail;
+  }
+
+  public String getThirdEmail() {
+    return thirdEmail;
+  }
+
+  public File getPhoto() {
+    return new File(photo);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id && Objects.equals(lastname, that.lastname) && Objects.equals(firstname, that.firstname) && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone) && Objects.equals(firstEmail, that.firstEmail);
+  }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", lastname='" + lastname + '\'' +
+            ", firstname='" + firstname + '\'' +
+            ", address='" + address + '\'' +
+            ", homePhone='" + homePhone + '\'' +
+            ", firstEmail='" + firstEmail + '\'' +
+            '}';
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, lastname, firstname, address, homePhone, firstEmail);
   }
 
 }

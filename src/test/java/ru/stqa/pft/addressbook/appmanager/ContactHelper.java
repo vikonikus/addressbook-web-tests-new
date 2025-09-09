@@ -22,18 +22,18 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form/input[21]"));
   }
 
-  public void fillContactForm(ContactData contactData) {
-    type(By.name("firstname"), contactData.getFirstname());
-    type(By.name("lastname"), contactData.getLastname());
-    attach(By.name("photo"), contactData.getPhoto());
-    type(By.name("company"), contactData.getCompany());
-    type(By.name("address"), contactData.getAddress());
-    type(By.name("home"), contactData.getHomePhone());
-    type(By.name("mobile"), contactData.getMobilePhone());
-    type(By.name("work"), contactData.getWorkPhone());
-    type(By.name("email"), contactData.getFirstEmail());
-    type(By.name("email2"), contactData.getSecondEmail());
-    type(By.name("email3"), contactData.getThirdEmail());
+  public void fillContactForm(ContactData contact) {
+    type(By.name("firstname"), contact.getFirstname());
+    type(By.name("lastname"), contact.getLastname());
+    attach(By.name("photo"), contact.getPhoto());
+    type(By.name("company"), contact.getCompany());
+    type(By.name("address"), contact.getAddress());
+    type(By.name("home"), contact.getHomePhone());
+    type(By.name("mobile"), contact.getMobilePhone());
+    type(By.name("work"), contact.getWorkPhone());
+    type(By.name("email"), contact.getFirstEmail());
+    type(By.name("email2"), contact.getSecondEmail());
+    type(By.name("email3"), contact.getThirdEmail());
 
 //    if (creation) {
 //      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
