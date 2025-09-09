@@ -3,14 +3,20 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import java.io.File;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
@@ -60,7 +66,10 @@ public class ContactData {
   @Expose
   @Column(name = "firstname")
   private String firstname;
-  //  private String company;
+
+  @Expose
+  @Transient
+  private String company;
 
   @Expose
   @Column(name = "address")
@@ -90,9 +99,6 @@ public class ContactData {
   @Column(name = "email3")
   private String thirdEmail;
 
-  @Transient
-  private String group;
-
   @Expose
   @Transient
   private String allPhones;
@@ -105,6 +111,12 @@ public class ContactData {
   @Transient
 //  @Column(name = "photo")
   private String photo; // не работает для перевода в json поэтому коменчены все поля с photo
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"),
+          inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
 
   public File getPhoto() {
     return new File(photo);
@@ -207,10 +219,10 @@ public class ContactData {
     return firstname;
   }
 
-  //  public String getCompany() {
-//    return company;
-//  }
-//
+  public String getCompany() {
+    return company;
+  }
+
   public String getAddress() {
     return address;
   }
@@ -227,8 +239,8 @@ public class ContactData {
     return workPhone;
   }
 
-  public String getGroup() {
-    return group;
+  public Groups getGroups() {
+    return new Groups(groups);
   }
 
 }

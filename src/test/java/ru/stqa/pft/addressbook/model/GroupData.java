@@ -6,8 +6,11 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @XStreamAlias("group")
@@ -29,6 +32,13 @@ public class GroupData {
   @Expose
   @Column(name = "group_footer")
   private String footer;
+
+  @ManyToMany(mappedBy = "groups")
+  private Set<ContactData> contacts = new HashSet<ContactData>();
+
+  public Contacts getContacts() {
+    return new Contacts(contacts);
+  }
 
   public GroupData withId(int id) {
     this.id = id;
@@ -69,6 +79,7 @@ public class GroupData {
   @Override
   public String toString() {
     return "GroupData{" +
+            "id='" + id + '\'' +
             "name='" + name + '\'' +
             ", header='" + header + '\'' +
             ", footer='" + footer + '\'' +

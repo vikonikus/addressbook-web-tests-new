@@ -23,6 +23,7 @@ public class HbConnectionTest {
     try {
       sessionFactory =
               new MetadataSources(registry)
+                      .addAnnotatedClass(GroupData.class)
                       .addAnnotatedClass(ContactData.class)
                       .buildMetadata()
                       .buildSessionFactory();
@@ -42,17 +43,15 @@ public class HbConnectionTest {
 //              .forEach(group -> out.println("Group id (" + group.getId()
 //                      + ") : Name (" + group.getName() + ") : Header (" + group.getHeader() + ") : Footer (" + group.getFooter()  + ")"));
 //    });
+
     sessionFactory.inTransaction(session -> {
       session.createSelectionQuery("from ContactData where deprecated is null", ContactData.class)
               .getResultList()
-              .forEach(contact -> out.println("Contact id (" + contact.getId()
-                      + ") : LastName (" + contact.getLastname() + ") : Firstname (" + contact.getFirstname()
-                      + ") : HomePhone (" + contact.getHomePhone() + ") : MobilePhone (" + contact.getMobilePhone()
-                      + ") : WorkPhone (" + contact.getWorkPhone()
-                      + ") : Photo (" + contact.getPhoto()
-                      + ")"));
+              .forEach(contact -> {
+                out.println(contact);
+                out.println(contact.getGroups());
+              });
     });
+
   }
-
 }
-
