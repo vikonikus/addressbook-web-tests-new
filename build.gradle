@@ -28,10 +28,16 @@ task testGroups(type: Test) {
     if (project.hasProperty('brouser')) {
         systemProperty 'browser', "${browser}"
     }
-    //запускается из командной строки со свойством gradlew -Ptarget=local testContacts
+    //запускается из командной строки со свойством gradlew -Ptarget=local testGroups
     // Если не указывать то запускается с дефолтным свойством из TestBase
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
+    }
+    //Запуск тестов с учетом или без проверки на UI интерфейсе (сравнение UI и из БД)
+    //запускается из командной строки со свойством gradlew -PverifyUI=true testGroups
+    // Если не указывать то запускается с дефолтным свойством из TestBase
+    if (project.hasProperty('verifyUI')) {
+        systemProperty 'verifyUI', "${verifyUI}"
     }
 }
 
@@ -49,4 +55,7 @@ task testContacts(type: Test) {
         systemProperty 'target', "${target}"
     }
 
+    if (project.hasProperty('verifyUI')) {
+        systemProperty 'verifyUI', "${verifyUI}"
+    }
 }
