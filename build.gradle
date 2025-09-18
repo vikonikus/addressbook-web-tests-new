@@ -4,6 +4,9 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo1.maven.org/maven2/' }
+    maven { url 'https://plugins.gradle.org/m2/' }
+
 }
 
 dependencies {
@@ -15,8 +18,8 @@ dependencies {
     testImplementation 'com.google.code.gson:gson:2.13.1'
     testImplementation 'ch.qos.logback:logback-classic:1.5.18'
     testImplementation 'mysql:mysql-connector-java:8.0.33'
-//    testImplementation 'org.hibernate.orm:hibernate-core:7.1.0.Final'
-//    testImplementation 'org.hibernate.orm:hibernate-models:7.1.0.Final'
+    implementation 'org.hibernate:hibernate-core:7.1.1.Final'
+    implementation 'org.hibernate.models:hibernate-models:1.0.1'
 }
 
 task testGroups(type: Test) {
