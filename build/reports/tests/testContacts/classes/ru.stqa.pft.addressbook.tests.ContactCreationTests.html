@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class ru.stqa.pft.addressbook.tests.ContactCreationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class ru.stqa.pft.addressbook.tests.ContactCreationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ru.stqa.pft.addressbook.tests.html">ru.stqa.pft.addressbook.tests</a> &gt; ContactCreationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">5</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">5.223s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Failed tests</a>
+</li>
+<li>
+<a href="#">Tests</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testContactCreation[0](ContactData{id=0, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='HomePhone0', mobilePhone='null', workPhone='null', firstEmail='0@0.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})"></a>
+<h3 class="failures">testContactCreation[0](ContactData{id=0, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='HomePhone0', mobilePhone='null', workPhone='null', firstEmail='0@0.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='HomePhone0', mobilePhone='null', workPhone='null', firstEmail='0@0.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+     but: was &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:67)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testContactCreation[1](ContactData{id=0, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='HomePhone1', mobilePhone='null', workPhone='null', firstEmail='1@1.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})"></a>
+<h3 class="failures">testContactCreation[1](ContactData{id=0, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='HomePhone1', mobilePhone='null', workPhone='null', firstEmail='1@1.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='HomePhone1', mobilePhone='null', workPhone='null', firstEmail='1@1.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+     but: was &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:67)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testContactCreation[2](ContactData{id=0, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='HomePhone2', mobilePhone='null', workPhone='null', firstEmail='2@2.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})"></a>
+<h3 class="failures">testContactCreation[2](ContactData{id=0, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='HomePhone2', mobilePhone='null', workPhone='null', firstEmail='2@2.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='HomePhone2', mobilePhone='null', workPhone='null', firstEmail='2@2.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'}]&gt;
+     but: was &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:67)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testContactCreation[3](ContactData{id=0, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='HomePhone3', mobilePhone='null', workPhone='null', firstEmail='3@3.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})"></a>
+<h3 class="failures">testContactCreation[3](ContactData{id=0, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='HomePhone3', mobilePhone='null', workPhone='null', firstEmail='3@3.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=153, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='HomePhone3', mobilePhone='null', workPhone='null', firstEmail='3@3.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+     but: was &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=153, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:67)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testContactCreation[4](ContactData{id=0, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='HomePhone4', mobilePhone='null', workPhone='null', firstEmail='4@4.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})"></a>
+<h3 class="failures">testContactCreation[4](ContactData{id=0, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='HomePhone4', mobilePhone='null', workPhone='null', firstEmail='4@4.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</h3>
+<span class="code">
+<pre>java.lang.AssertionError: 
+Expected: &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=154, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='HomePhone4', mobilePhone='null', workPhone='null', firstEmail='4@4.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=153, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+     but: was &lt;[ContactData{id=148, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=151, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=153, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone3', allEmails='3@3.ru'}, ContactData{id=146, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone1', allEmails='1@1.ru'}, ContactData{id=149, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=150, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone0', allEmails='0@0.ru'}, ContactData{id=154, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone4', allEmails='4@4.ru'}, ContactData{id=147, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}, ContactData{id=152, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='null', mobilePhone='null', workPhone='null', firstEmail='null', secondEmail='null', thirdEmail='null', group='null', allPhones='HomePhone2', allEmails='2@2.ru'}]&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:6)
+	at ru.stqa.pft.addressbook.tests.ContactCreationTests.testContactCreation(ContactCreationTests.java:67)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">testContactCreation[0](ContactData{id=0, lastname='Lastname0', firstname='Firstname0', address='address0', homePhone='HomePhone0', mobilePhone='null', workPhone='null', firstEmail='0@0.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</td>
+<td class="failures">1.136s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testContactCreation[1](ContactData{id=0, lastname='Lastname1', firstname='Firstname1', address='address1', homePhone='HomePhone1', mobilePhone='null', workPhone='null', firstEmail='1@1.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</td>
+<td class="failures">0.909s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testContactCreation[2](ContactData{id=0, lastname='Lastname2', firstname='Firstname2', address='address2', homePhone='HomePhone2', mobilePhone='null', workPhone='null', firstEmail='2@2.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</td>
+<td class="failures">0.959s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testContactCreation[3](ContactData{id=0, lastname='Lastname3', firstname='Firstname3', address='address3', homePhone='HomePhone3', mobilePhone='null', workPhone='null', firstEmail='3@3.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</td>
+<td class="failures">1.084s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testContactCreation[4](ContactData{id=0, lastname='Lastname4', firstname='Firstname4', address='address4', homePhone='HomePhone4', mobilePhone='null', workPhone='null', firstEmail='4@4.ru', secondEmail='null', thirdEmail='null', group='null', allPhones='null', allEmails='null'})</td>
+<td class="failures">1.135s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14</a> at 6 сент. 2025 г., 00:50:20</p>
+</div>
+</div>
+</body>
+</html>

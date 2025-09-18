@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupCreationTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-09-04T19:14:24.673Z" hostname="VITALY-PC67" time="3.779">
+  <properties/>
+  <testcase name="testGroupCreation[0](GroupData{name='test 0', header='header 0', footer='footer 0'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="1.075"/>
+  <testcase name="testGroupCreation[1](GroupData{name='test 1', header='header 1', footer='footer 1'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="0.776"/>
+  <testcase name="testGroupCreation[2](GroupData{name='test 2', header='header 2', footer='footer 2'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="0.644"/>
+  <testcase name="testGroupCreation[3](GroupData{name='test 3', header='header 3', footer='footer 3'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="0.627"/>
+  <testcase name="testGroupCreation[4](GroupData{name='test 4', header='header 4', footer='footer 4'})" classname="ru.stqa.pft.addressbook.tests.GroupCreationTests" time="0.656"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
