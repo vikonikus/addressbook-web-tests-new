@@ -4,8 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -32,15 +36,22 @@ public class ApplicationManager {
 
     dbHelper = new DbHelper();
 
-    if (browser.equals("edge")) {
-      wd = new EdgeDriver();
-    } else if (browser.equals("chrome")) {
-      wd = new ChromeDriver();
-    } else if (browser.equals("firefox")) {
-      wd = new FirefoxDriver();
+    if ("".equals(properties.getProperty("selenium.server"))) {
+      if (browser.equals("edge")) {
+        wd = new EdgeDriver();
+      } else if (browser.equals("chrome")) {
+        wd = new ChromeDriver();
+      } else if (browser.equals("firefox")) {
+        wd = new FirefoxDriver();
+      } else {
+        throw new IllegalArgumentException("Unsupported browser: " + browser);
+      }
     } else {
-      throw new IllegalArgumentException("Unsupported browser: " + browser);
+      DesiredCapabilities capabilities = new DesiredCapabilities();
+      capabilities.setBrowserName(browser);
+      wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")), capabilities);
     }
+
 
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
     wd.get(properties.getProperty("web.baseUrl"));
