@@ -15,8 +15,8 @@ dependencies {
     testImplementation 'com.google.code.gson:gson:2.13.1'
     testImplementation 'ch.qos.logback:logback-classic:1.5.18'
     testImplementation 'mysql:mysql-connector-java:8.0.33'
-    testImplementation 'org.hibernate.orm:hibernate-core:7.1.0.Final'
-    testImplementation 'org.hibernate.orm:hibernate-models:7.1.0.Final'
+//    testImplementation 'org.hibernate.orm:hibernate-core:7.1.0.Final'
+//    testImplementation 'org.hibernate.orm:hibernate-models:7.1.0.Final'
 }
 
 task testGroups(type: Test) {
