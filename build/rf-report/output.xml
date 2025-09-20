@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generator="Robot 4.1.2 (Jython 2.7.2 on java23.0.1)" schemaversion="2" generated="20250920 11:19:07.931">
+<suite source="F:\JavaProjects\addressbook-web-tests-new\src\test\resources\rf" name="Rf" id="s1">
+<suite source="F:\JavaProjects\addressbook-web-tests-new\src\test\resources\rf\groups.robot" name="Groups" id="s1-s1">
+<kw type="SETUP" library="ru.stqa.pft.addressbook.rf.AddressbookKeywords" name="Init Application Manager">
+<msg level="INFO" timestamp="20250920 11:19:11.887">11:19:08.185 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 7.1.1.Final
+11:19:08.187 INFO  org.hibernate.cfg.Environment - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.format_sql=true, hibernate.connection.url=jdbc:mysql://localhost:3306/addressbook?zeroDateTimeBehavior=CONVERT_TO_NULL, hibernate.hbm2ddl.auto=validate, hibernate.show_sql=false, hibernate.connection.password=****, hibernate.highlight_sql=true, hibernate.connection.username=root}
+11:19:08.447 WARN  o.hibernate.orm.connections.pooling - HHH10001002: Using built-in connection pool (not intended for production use)
+11:19:08.635 WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+11:19:08.644 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/addressbook?zeroDateTimeBehavior=CONVERT_TO_NULL]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: addressbook/undefined
+	Autocommit mode: false
+	Isolation level: REPEATABLE_READ
+	JDBC fetch size: none
+	Pool: DriverManagerConnectionProviderImpl
+	Minimum pool size: 1
+	Maximum pool size: 20
+11:19:09.424 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)</msg>
+<status endtime="20250920 11:19:11.889" starttime="20250920 11:19:08.144" status="PASS"/>
+</kw>
+<test name="Can Create Group With Valid Data" id="s1-s1-t1">
+<kw library="ru.stqa.pft.addressbook.rf.AddressbookKeywords" name="Get Group Count">
+<var>${old_count}</var>
+<msg level="INFO" timestamp="20250920 11:19:12.022">${old_count} = 69</msg>
+<status endtime="20250920 11:19:12.023" starttime="20250920 11:19:11.893" status="PASS"/>
+</kw>
+<kw library="ru.stqa.pft.addressbook.rf.AddressbookKeywords" name="Create Group">
+<arg>test name</arg>
+<arg>test header</arg>
+<arg>test footer</arg>
+<status endtime="20250920 11:19:12.675" starttime="20250920 11:19:12.024" status="PASS"/>
+</kw>
+<kw library="ru.stqa.pft.addressbook.rf.AddressbookKeywords" name="Get Group Count">
+<var>${new_count}</var>
+<msg level="INFO" timestamp="20250920 11:19:12.762">${new_count} = 70</msg>
+<status endtime="20250920 11:19:12.762" starttime="20250920 11:19:12.676" status="PASS"/>
+</kw>
+<kw library="BuiltIn" name="Evaluate">
+<var>${expected_count}</var>
+<arg>${old_count} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg level="INFO" timestamp="20250920 11:19:12.781">${expected_count} = 70</msg>
+<status endtime="20250920 11:19:12.782" starttime="20250920 11:19:12.764" status="PASS"/>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal As Integers">
+<arg>${new_count}</arg>
+<arg>${expected_count}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status endtime="20250920 11:19:12.789" starttime="20250920 11:19:12.783" status="PASS"/>
+</kw>
+<status endtime="20250920 11:19:12.790" starttime="20250920 11:19:11.890" status="PASS"/>
+</test>
+<kw type="TEARDOWN" library="ru.stqa.pft.addressbook.rf.AddressbookKeywords" name="Stop Application Manager">
+<status endtime="20250920 11:19:13.514" starttime="20250920 11:19:12.794" status="PASS"/>
+</kw>
+<status endtime="20250920 11:19:13.514" starttime="20250920 11:19:08.115" status="PASS"/>
+</suite>
+<status endtime="20250920 11:19:13.522" starttime="20250920 11:19:07.941" status="PASS"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" skip="0" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" skip="0" fail="0" name="Rf" id="s1">Rf</stat>
+<stat pass="1" skip="0" fail="0" name="Groups" id="s1-s1">Rf.Groups</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

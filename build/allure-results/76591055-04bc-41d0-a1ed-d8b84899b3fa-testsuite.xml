@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite xmlns:ns2="urn:model.allure.qatools.yandex.ru" start="1758312327600" stop="1758312331724">
+    <name>Suite1</name>
+    <test-cases>
+        <test-case start="1758312327678" stop="1758312328801" status="passed">
+            <name>testGroupCreation[GroupData{id='2147483647'name='test 0', header='header 0', footer='footer 0'}]</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312328868" stop="1758312329386" status="passed">
+            <name>testGroupCreation[GroupData{id='2147483647'name='test 1', header='header 1', footer='footer 1'}]</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312329386" stop="1758312329867" status="passed">
+            <name>testGroupCreation[GroupData{id='2147483647'name='test 2', header='header 2', footer='footer 2'}]</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312329869" stop="1758312330336" status="passed">
+            <name>testGroupCreation[GroupData{id='2147483647'name='test 3', header='header 3', footer='footer 3'}]</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312330352" stop="1758312330857" status="passed">
+            <name>testGroupCreation[GroupData{id='2147483647'name='test 4', header='header 4', footer='footer 4'}]</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312330868" stop="1758312331432" status="passed">
+            <name>testGroupModification</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+        <test-case start="1758312331441" stop="1758312331721" status="passed">
+            <name>testGroupDeletion</name>
+            <steps/>
+            <attachments/>
+            <labels/>
+        </test-case>
+    </test-cases>
+    <labels/>
+</ns2:test-suite>

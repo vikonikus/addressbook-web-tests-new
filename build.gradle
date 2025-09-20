@@ -9,6 +9,10 @@ repositories {
 
 }
 
+configurations {
+    agent
+}
+
 dependencies {
     testImplementation 'org.testng:testng:7.11.0'
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.35.0'
@@ -20,6 +24,14 @@ dependencies {
     testImplementation 'mysql:mysql-connector-java:8.0.33'
     implementation 'org.hibernate:hibernate-core:7.1.1.Final'
     implementation 'org.hibernate.models:hibernate-models:1.0.1'
+    agent "org.aspectj:aspectjweaver:1.8.0"
+    implementation "ru.yandex.qatools.allure:allure-testng-adaptor:1.4.0.RC4"
+
+    testImplementation 'com.sun.activation:javax.activation:1.2.0'
+    testImplementation 'javax.xml.bind:jaxb-api:2.3.1'
+    testImplementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+    testImplementation 'com.sun.xml.bind:jaxb-impl:2.3.1'
+    implementation 'org.robotframework:robotframework:4.1.2'
 }
 
 task testGroups(type: Test) {
@@ -30,6 +42,12 @@ task testGroups(type: Test) {
     // Если не указывать то запускается с дефолтным свойством из TestBase
     if (project.hasProperty('brouser')) {
         systemProperty 'browser', "${browser}"
+    }
+    //Для запуска на разных платформах
+    // запускается из командной строки со свойством gradlew -Pplatform=.... testGroups
+    // Если не указывать то запускается с дефолтным свойством из TestBase
+    if (project.hasProperty('platform')) {
+        systemProperty 'platform', "${platform}"
     }
     //запускается из командной строки со свойством gradlew -Ptarget=local testGroups
     // Если не указывать то запускается с дефолтным свойством из TestBase
@@ -44,6 +62,11 @@ task testGroups(type: Test) {
     }
 }
 
+testGroups.doFirst {
+    jvmArgs "-javaagent:${configurations.agent.singleFile}"
+}
+
+
 task testContacts(type: Test) {
     useTestNG() {
         suites 'src/test/resources/testng-contacts.xml'
@@ -54,6 +77,10 @@ task testContacts(type: Test) {
         systemProperty 'browser', "${browser}"
     }
 
+    if (project.hasProperty('platform')) {
+        systemProperty 'platform', "${platform}"
+    }
+
     if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
     }
@@ -61,4 +88,11 @@ task testContacts(type: Test) {
     if (project.hasProperty('verifyUI')) {
         systemProperty 'verifyUI', "${verifyUI}"
     }
+}
+
+task rf(type: JavaExec) {
+    main = 'org.robotframework.RobotFramework'
+    classpath = sourceSets.test.runtimeClasspath
+    args '--outputdir', 'build/rf-report'
+    args 'src/test/resources/rf'
 }

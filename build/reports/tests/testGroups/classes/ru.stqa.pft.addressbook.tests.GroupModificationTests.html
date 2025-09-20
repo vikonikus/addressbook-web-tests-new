@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.145s</div>
+<div class="counter">0.565s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,92 +61,12 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Failed tests</a>
-</li>
-<li>
 <a href="#">Tests</a>
 </li>
+<li>
+<a href="#">Standard output</a>
+</li>
 </ul>
-<div class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="testGroupModification"></a>
-<h3 class="failures">testGroupModification</h3>
-<span class="code">
-<pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name='group_name']&quot;}
-  (Session info: chrome=140.0.7339.80)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.35.0', revision: '1c58e5028b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [54e2bfd033151dd153b892bf18d52c49, findElement {using=name, value=group_name}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.80, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\Vitaly\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53746}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53746/devtoo..., se:cdpVersion: 140.0.7339.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 54e2bfd033151dd153b892bf18d52c49
-	at java.base@23.0.1/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base@23.0.1/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base@23.0.1/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:557)
-	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at app//org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:380)
-	at app//org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
-	at app//ru.stqa.pft.addressbook.appmanager.HelperBase.click(HelperBase.java:18)
-	at app//ru.stqa.pft.addressbook.appmanager.HelperBase.type(HelperBase.java:22)
-	at app//ru.stqa.pft.addressbook.appmanager.GroupHelper.fillGroupForm(GroupHelper.java:25)
-	at app//ru.stqa.pft.addressbook.appmanager.GroupHelper.modify(GroupHelper.java:61)
-	at app//ru.stqa.pft.addressbook.tests.GroupModificationTests.testGroupModification(GroupModificationTests.java:30)
-	at java.base@23.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base@23.0.1/java.lang.reflect.Method.invoke(Method.java:580)
-	at app//org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at app//org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at app//org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at app//org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at app//org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at app//org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base@23.0.1/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at app//org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at app//org.testng.TestRunner.run(TestRunner.java:616)
-	at app//org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at app//org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at app//org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at app//org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at app//org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at app//org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at app//org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at app//org.testng.TestNG.runSuites(TestNG.java:1112)
-	at app//org.testng.TestNG.run(TestNG.java:1079)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
-	at java.base@23.0.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base@23.0.1/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
-	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -158,11 +78,19 @@ Session ID: 54e2bfd033151dd153b892bf18d52c49
 </tr>
 </thead>
 <tr>
-<td class="failures">testGroupModification</td>
-<td class="failures">0.145s</td>
-<td class="failures">failed</td>
+<td class="success">testGroupModification</td>
+<td class="success">0.565s</td>
+<td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>00:05:30.861 INFO  r.s.pft.addressbook.tests.TestBase - Start test testGroupModification with parameters []
+00:05:31.433 INFO  r.s.pft.addressbook.tests.TestBase - Stop test testGroupModification
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -172,7 +100,7 @@ Session ID: 54e2bfd033151dd153b892bf18d52c49
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 8.14</a> at 5 сент. 2025 г., 00:03:05</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at 20 сент. 2025 г., 00:05:33</p>
 </div>
 </div>
 </body>
